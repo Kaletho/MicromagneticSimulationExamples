@@ -1,0 +1,48 @@
+#########################################################################
+# magpar configuration file: allopt.txt
+#########################################################################
+
+-simName 1seg
+
+#-refine 1           # refine mesh 1 times
+
+-metispartition 8   # mesh partition using METIS for actually used number of processors
+
+-size 1e-9          # set length scaling factor to 1 nm
+
+#-init_mag -9        # initialize magnetization with Bloch wall and reverse
+-init_mag 3         # initialize magnetization with Mz = 1
+
+-mode 1             # select energy minimization using TAO
+
+-demag 1            # switch on demagnetizing field
+
+-hextini 79.57747154594767e-3   # apply a homogeneous external field of 1 Oe
+#-hstep   -0.7957747      # change field amplitude in steps of ~ 10 Oe
+#-hfinal  -39.788736       # final field value 500 Oe
+-htheta 0.017453293     # 1 deg away from nw axis
+
+# change field in steps when system reaches equilibrium
+# (similar to -hext_ho_htfile; also fileformat)
+# file format:
+# <number of data pairs>
+# <step number> <scaling factor>
+# ...
+-hext_ho_hstepfile fieldTable.txt
+
+-condinp_equil 1    # save output files when equilibrium is reached
+#-condinp_t  1e99    # do not save output files at regular time intervals
+
+# slice plane for png files: x-y-plane
+#-slice_n 0,0,1      # normal vector on slice plane
+#-slice_p 0,0,0      # any point in the slice plane (at the interphase)
+
+-line_v 0,0,1       # set measurement line parallel to z-axis
+-line_p 0,0,0     # how much is this? I don't know
+
+#-logpid 1           # save average magnetization in output files (*.log_XXX)
+
+-jfinal -1e99         # stop simulation if |J//Hext| < jfinal (exit condition) # ignore this exit condition
+
+-tao_fatol 1e-10    # set absolute tolerance for energy minimizer TAO. Default is 1e-4
+-tao_frtol 1e-10    # set relative tolerance for energy minimizer TAO. Default is 1e-4
