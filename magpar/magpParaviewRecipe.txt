@@ -1,0 +1,13 @@
+File -> Open -> Select your file.inp -> AVS UCD Reader -> Ok
+On properties (bottom left) -> Apply
+
+
+# You need to "build" m
+Calculator filter -> Result Array Name: m
+				  -> type M_x*iHat + M_y*jHat + M_z*kHat 
+				  -> Apply 
+				  
+# Now you can use your filter of preference
+Glyph filter -> Orientation Array: m
+			 -> Scale Array: No scale array
+			 -> Coloring: m ; (X, Y or Z)

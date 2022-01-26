@@ -3,8 +3,8 @@
  
  Both these packages use configuration files. On top of these, you can write scripts to do pre and post processing.
  
- I will show examples of scripting in linux for magpar, since it is better to run it in the virtualmicromagnetics environment, and in windows for mumax3
+ Each folder contains examples of scripting in linux for magpar, since it is better to run it in the virtualmicromagnetics environment, and in windows for mumax3.
  
- Finally, I will show how to use paraview (both gui and scripting) for visualizing your results
- 
+ Also in those folders there is a Paraview "recipe" listing the filters used for visualizing the results and a python "trace" in case the rendering is to be done in a (non GUI) cluster.
+  
  Hope you find something useful

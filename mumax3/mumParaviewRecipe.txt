@@ -1,0 +1,10 @@
+File -> Open -> Select your file.vts
+On properties (bottom left) -> Apply
+
+# To get rid of the grid without material
+Calculator filter -> type m.m -> Apply (You can calculate an estimation of magnetoresistance this way)
+Threshold filter -> Scalars: Calculator Result -> Minimum: 0.01 -> Apply
+
+# Now you can use your filter of preference
+Glyph filter -> Orientation Array: m
+			 -> Coloring: m ; (X, Y or Z)

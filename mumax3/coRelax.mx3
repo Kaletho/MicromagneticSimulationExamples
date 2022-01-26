@@ -1,0 +1,36 @@
+// Magnetic parameters
+
+// Magpar Co
+
+Msat = 1400563.499208679 // [A/m]
+Aex = 1.30E-11 // [J/m]
+kc1 = -2.7e5 // cubic anisotropy [J/m3]
+kc2 = -0.75e5 // [J/m3]
+
+anisC1 = vector(0.707, 0.707, 0.02468) // 88 deg away from z
+//anisC2 = vector(0, 1, 0)
+alpha = 0.1
+
+// Define exchange length
+//lex := sqrt(Aex / (0.5 * mu0 * pow(Ms ,2)))
+
+// Set geometry
+
+L := 100e-9 // square box side lenth in nm
+D := 80e-9 // diameter in nm
+h := 200e-9 // height of cylinder in nm (third box dimension)
+e := 2e-9 // element size in nm
+
+SetGridsize(50, 50, 100) // L/e, L/e, h/e
+SetCellsize(e, e, e)
+
+EdgeSmooth = 8
+
+setgeom( cylinder(D, inf) )
+saveas(geom, "cylinder")
+
+// Set random initial magnetization
+m = randomMag()
+
+relax()
+save(m)  // save relaxed state
